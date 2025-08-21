@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module" src="scripts.js"></script>
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <button class="no-bg-btn" onclick="toggleTheme()">
+          <i class="fa-solid fa-circle-half-stroke fa-2x text-dark"></i>
+        </button>
+
+        <h1 class="display-1 text-primary text-center flex-grow-1 m-0">
+          MY<i class="fa-solid fa-chart-pie text-secondary"></i>ACCOUNT
+        </h1>
+
+        <div style="width: 40px"></div>
+      </div>
+
+      <div class="alert alert-secondary text-center" role="alert">Balance</div>
+      <div class="row">
+        <div class="col-8 order-1 order-md-2">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="col-5">Description</th>
+                <th class="col-5">Amount</th>
+                <th class="col-1"></th>
+                <th class="col-1"></th>
+              </tr>
+            </thead>
+            <tbody id="actions">
+              <tr></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-4 order-2 order-md-1">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="type"
+          >
+            <option selected value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control mt-3"
+              id="description"
+              placeholder="description"
+            />
+            <label for="description">Description</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="amount"
+              placeholder="100"
+            />
+            <label for="amount">Amount</label>
+          </div>
+          <button class="btn btn-primary w-100" onclick="addNewAction()">
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .no-bg-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .dark-mode {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+
+    .dark-mode .table {
+      color: #fff;
+    }
+
+    .dark-mode .alert {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .dark-mode .form-control,
+    .dark-mode .form-select {
+      background-color: #111;
+      color: #fff;
+      border-color: #444;
+    }
+  </style>
+</html>
